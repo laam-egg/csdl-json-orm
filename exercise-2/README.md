@@ -8,12 +8,17 @@ Create a new `.env` file and write in:
 DATABASE_URL="mysql://username:password@localhost:3306/classicmodels"
 ```
 
+Note that do NOT create `.env` file with PowerShell's `echo`
+command, or you may run into an "Environment variable not
+found" error while running Prisma commands below
+([reference](https://stackoverflow.com/a/73945630/13680015)).
+
 Then run:
 
 ```sh
 cd exercise-2
 npm install
-npx prisma migrate dev --name 0_init
+npx prisma generate
 ```
 
 ## To turn the server on
